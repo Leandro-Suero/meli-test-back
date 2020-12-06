@@ -1,5 +1,6 @@
 import express from "express";
 import morgan from "morgan";
+import cors from "cors";
 
 import pkg from "../package.json";
 import itemsRoutes from "./routes/items.routes";
@@ -10,6 +11,7 @@ const app = express();
 app.set("pkg", pkg);
 app.set("port", process.env.PORT || 4000);
 app.set("json spaces", 4);
+app.use(cors());
 app.use(morgan("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
