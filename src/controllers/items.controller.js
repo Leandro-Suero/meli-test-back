@@ -35,11 +35,12 @@ export async function getSearchResults(req, res) {
     const categories = ItemUtils.formatCategories(categoriesArray);
 
     return res.json({ author, items, categories });
-  } catch (error) {
-    console.error(error);
+  } catch (err) {
+    console.error(err);
+    let error_code = err.code ? err.code : true;
     return res
       .status(500)
-      .json({ message: "Something went wrong", data: {}, error: true });
+      .json({ message: "Something went wrong", data: {}, error: error_code });
   }
 }
 
@@ -63,9 +64,10 @@ export async function getItemDetails(req, res) {
       return res.status(status).json({ message, data: {}, error });
     } else {
       console.error(err);
+      let error_code = err.code ? err.code : true;
       return res
         .status(500)
-        .json({ message: "Something went wrong", data: {}, error: true });
+        .json({ message: "Something went wrong", data: {}, error: error_code });
     }
   }
 }
