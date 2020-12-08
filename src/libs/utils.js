@@ -12,7 +12,9 @@ export function getAuthor() {
 export function splitNumberWithDecimals(number) {
   const numberAsString = number.toString();
   let pieces = numberAsString.split(".");
-  const decimals = pieces[1] ? pieces[1] * 1 : 0;
-
+  let decimals = pieces[1] ? pieces[1] * 1 : 0;
+  if (decimals.toString().length === 1) {
+    decimals = decimals * 10;
+  }
   return { amount: pieces[0] * 1, decimals };
 }
