@@ -1,0 +1,167 @@
+{
+	"info": {
+		"_postman_id": "4e52efba-4136-4754-901a-3bba8a85add7",
+		"name": "Hosted_Demo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Success",
+			"item": [
+				{
+					"name": "GET author /api",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://meli-test-back.herokuapp.com/api",
+							"protocol": "https",
+							"host": [
+								"meli-test-back",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET items by search /api/items?q=:query",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://meli-test-back.herokuapp.com/api/items?q=reloj",
+							"protocol": "https",
+							"host": [
+								"meli-test-back",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"items"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "reloj"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET empty items by search /api/items?q=",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://meli-test-back.herokuapp.com/api/items?q=",
+							"protocol": "https",
+							"host": [
+								"meli-test-back",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"items"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET item by id /api/items/:id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://meli-test-back.herokuapp.com/api/items/MLA884065117",
+							"protocol": "https",
+							"host": [
+								"meli-test-back",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"items",
+								"MLA884065117"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Error",
+			"item": [
+				{
+					"name": "GET items not found /api/items?q=:query",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://meli-test-back.herokuapp.com/api/items?q=yzyzyz",
+							"protocol": "https",
+							"host": [
+								"meli-test-back",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"items"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "yzyzyz"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET item by wrong id /api/items/:id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://meli-test-back.herokuapp.com/api/items/MLA884065",
+							"protocol": "https",
+							"host": [
+								"meli-test-back",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"items",
+								"MLA884065"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

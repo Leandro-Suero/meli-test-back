@@ -1,0 +1,161 @@
+{
+	"info": {
+		"_postman_id": "92a7be58-9e52-42cd-9698-5443ccede4cb",
+		"name": "localhost",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Success",
+			"item": [
+				{
+					"name": "GET author /api",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET items by search /api/items?q=:query",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/items?q=reloj",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"items"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "reloj"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET empty items by search /api/items?q=",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/items?q=",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"items"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET item by id /api/items/:id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/items/MLA884065117",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"items",
+								"MLA884065117"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Error",
+			"item": [
+				{
+					"name": "GET items not found /api/items?q=:query",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/items?q=yzyzyz",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"items"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "yzyzyz"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET item by wrong id /api/items/:id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/items/MLA884065",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"items",
+								"MLA884065"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
