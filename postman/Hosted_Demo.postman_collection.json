@@ -158,6 +158,28 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "GET item by id  /api/items/:id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://meli-test-back.herokuapp.com/api/items/MLA861299915",
+							"protocol": "https",
+							"host": [
+								"meli-test-back",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"items",
+								"MLA861299915"
+							]
+						}
+					},
+					"response": []
 				}
 			],
 			"protocolProfileBehavior": {}

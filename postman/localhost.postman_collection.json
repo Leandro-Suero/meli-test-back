@@ -152,6 +152,27 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "GET item by id  /api/items/:id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/items/MLA861299915",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"items",
+								"MLA861299915"
+							]
+						}
+					},
+					"response": []
 				}
 			],
 			"protocolProfileBehavior": {}
