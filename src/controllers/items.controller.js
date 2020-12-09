@@ -46,16 +46,26 @@ export async function getSearchResults(req, res) {
 
 export async function getItemDetails(req, res) {
   try {
-    const [
-      { data },
-      {
-        data: { plain_text: description },
-      },
-    ] = await Promise.all([
+    const values = await Promise.allSettled([
       Utils.fetchApiMeli(`/items/${req.params.id}`),
       Utils.fetchApiMeli(`/items/${req.params.id}/description`),
     ]);
-    let item = ItemUtils.formatItem(data, true);
+    let itemData = {};
+    let description = "";
+    //item info promise
+    if (values[0].status == "fulfilled") {
+      itemData = values[0].value.data;
+    } else {
+      return res
+        .status(500)
+        .json({ message: "Something went wrong", data: {}, error: true });
+    }
+    //fill description if possible
+    if (values[1].status == "fulfilled") {
+      description = values[1].value.data.plain_text;
+    }
+
+    let item = ItemUtils.formatItem(itemData, true);
 
     return res.json({ author, item: { ...item, description } });
   } catch (err) {
