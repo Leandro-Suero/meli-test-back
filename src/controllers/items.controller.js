@@ -52,9 +52,16 @@ export async function getItemDetails(req, res) {
     ]);
     let itemData = {};
     let description = "";
+    let categories = [];
     //item info promise
     if (values[0].status == "fulfilled") {
       itemData = values[0].value.data;
+
+      //request data to create the breadcrumbs
+      const category = await Utils.fetchApiMeli(
+        `/categories/${itemData.category_id}`
+      );
+      categories = ItemUtils.formatCategories(category.data.path_from_root);
     } else {
       return res
         .status(500)
@@ -67,7 +74,7 @@ export async function getItemDetails(req, res) {
 
     let item = ItemUtils.formatItem(itemData, true);
 
-    return res.json({ author, item: { ...item, description } });
+    return res.json({ author, item: { ...item, description }, categories });
   } catch (err) {
     if (err.response?.data) {
       const { error, status, message } = err.response.data;
