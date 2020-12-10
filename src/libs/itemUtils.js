@@ -8,6 +8,9 @@ export function formatItem(item, isDetail) {
     currency_id,
     condition,
     shipping: { free_shipping },
+    seller_address: {
+      city: { name: seller_city_name },
+    },
   } = item;
   const { amount, decimals } = Utils.splitNumberWithDecimals(price);
 
@@ -17,6 +20,7 @@ export function formatItem(item, isDetail) {
     price: { currency: currency_id, amount, decimals },
     condition,
     free_shipping,
+    seller_city_name,
     picture: isDetail ? item.pictures[0].url : item.thumbnail,
     sold_quantity: isDetail ? item.sold_quantity : undefined,
   };
