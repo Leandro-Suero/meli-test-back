@@ -1,22 +1,24 @@
 # Test Practico - Frontend - MercadoLibre
 
 ## INDEX
-1. [SCRIPTS](#1.-SCRIPTS)
-2. [COMO USAR](#2.-COMO-USAR)
-3. [SUPUESTOS](#3.-SUPUESTOS)
-4. [EXTRAS](#4.-EXTRAS)
-5. [DEMOS ONLINE](#5.-DEMOS-ONLINE)
+1. [SCRIPTS](#scripts)
+2. [COMO USAR](#como-usar)
+3. [SUPUESTOS](#supuestos)
+4. [EXTRAS](#extras)
+5. [DEMOS ONLINE](#demos-online)
+6. [BRANCHS](#branchs)
    
-## 1. SCRIPTS
-- "dev": starts the server with hot reloading. Development.
-- "build": generates the distribution files for production. 
-- "start": starts the server with the compiled version. Production.
+## SCRIPTS
+
+### `dev`: starts the server with hot reloading. Development.
+### `build`: generates the distribution files for production. 
+### `start`: starts the server with the compiled version. Production.
 
 [^ *regresar al índice*](#INDEX)
 
 ---
 
-## 2. COMO USAR
+## COMO USAR
 
 Para utilizar el proyecto de backend (este mismo) deberías:
 - Copiar y renombrar el archivo ".env.example" como ".env", a continuación se explican las variables de entorno.
@@ -36,7 +38,7 @@ Para ejecutar el proyecto de frontend ([Repositorio GitHub React](https://github
 
 ---
 
-## 3. SUPUESTOS
+## SUPUESTOS
 Supuestos que utilicé para avanzar rápidamente con el desarrollo, sin necesidad de feedback (fin de semana largo).
 - No es necesario generar diferentes "branch".
 - El resultado de la busqueda no puede ser limitado o paginado a voluntad ya que la documentacion de la API solicitada no posee parámetros a tal fin.
@@ -48,15 +50,26 @@ Supuestos que utilicé para avanzar rápidamente con el desarrollo, sin necesida
 
 ---
 
-## 4. EXTRAS
+## EXTRAS
 - En la carpeta /postman se encuentran para importar una serie de llamadas a la API, tanto en localhost como en su versión hosteada online.
 
 [^ *regresar al índice*](#INDEX)
 
 ---
 
-## 5. DEMOS ONLINE
+## DEMOS ONLINE
 - [Ver DEMO ONLINE del FRONTEND React](https://meli-test-front.netlify.app/)
 - [Ver DEMO ONLINE del BACKEND NodeJS](https://meli-test-back.herokuapp.com/api)
+
+[^ *regresar al índice*](#INDEX)
+
+---
+
+## BRANCHS
+Como era contradictorio lo solicitado por el diseño de las vistas y los limites de la api a construir es que en un branch respeté las vistas y modifique la API y en otro a la inversa.
+### `master`: 
+respeto los limites de la API, y en la vista, respeto el diseño pero tengo que rellenar con otra información en 2 vistas. En los resultados de busqueda en lugar de la ciudad muestro el estado del producto y en la vista de detalle del producto genero las Breadcrumbs con un array fijo de información para recordar esta decisión.
+### `RespetoVistasPeroIgnoroApi`: 
+en este branch como su nombre lo indica, respeto el diseño de las vistas y agrego a la Api la información faltante aunque no este incluida en su documentación entregada.
 
 [^ *regresar al índice*](#INDEX)
